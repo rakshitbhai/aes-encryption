@@ -17,7 +17,8 @@ An AES Encryption App built using **Flutter** and **GetX** for state management.
 
 ## 📸 Screenshots
 
-*(Add relevant screenshots of your app here)*
+![Screenshot 2025-02-26 at 1 21 16 AM](https://github.com/user-attachments/assets/7fbc0dfb-b688-4995-9b65-5b1cfd7547e9)
+
 
 ---
 
