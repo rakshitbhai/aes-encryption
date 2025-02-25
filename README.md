@@ -17,10 +17,10 @@ An AES Encryption App built using **Flutter** and **GetX** for state management.
 
 ## 📸 Screenshots
 
-### #Encryption:
+### Encryption:
 ![Encryption](https://github.com/user-attachments/assets/b898f2c1-5503-4f96-936a-667b6f2e1e46)
 
-### #Decryption:
+### Decryption:
 ![Decryption](https://github.com/user-attachments/assets/ecd45842-9d73-4adc-8f23-e26f18f0f37f)
 
 
