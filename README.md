@@ -1,16 +1,98 @@
-# end
+# 🔐 AES Encryption App
 
-A new Flutter project for creating encrypted data and decrypted and displaying secret key generated
+An AES Encryption App built using **Flutter** and **GetX** for state management. This app provides secure encryption and decryption of text using the **AES (Advanced Encryption Standard)** algorithm.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## ✨ Features
 
-A few resources to get you started if this is your first Flutter project:
+✅ Encrypt text using AES encryption  
+✅ Decrypt encrypted text using a secret key  
+✅ Generate a QR code containing the encrypted message  
+✅ User-friendly interface with smooth animations  
+✅ Lightweight and fast with **GetX** state management  
+✅ Works entirely offline for security  
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 📸 Screenshots
+
+*(Add relevant screenshots of your app here)*
+
+---
+
+## 🚀 Installation
+
+Follow these steps to run the app on your device:
+
+### 1️⃣ Clone the Repository
+```sh
+git clone https://github.com/rakshitbhai/aes-encryption.git
+cd aes-encryption
+```
+
+### 2️⃣ Install Dependencies
+```sh
+flutter pub get
+```
+
+### 3️⃣ Run the App
+```sh
+flutter run
+```
+
+---
+
+## 🛠️ Technologies Used
+
+- **Flutter** - Cross-platform framework  
+- **GetX** - State management and dependency injection  
+- **AES Encryption** - Secure encryption algorithm  
+- **QR Code Generation** - Displays encrypted message as a QR code  
+
+---
+
+## 🏗️ Project Structure
+```
+├── lib
+│   ├── encryption_page
+│   │   ├── encryption_controller.dart
+│   │   └── encryption_view.dart
+│   ├── main.dart
+│   ├── theme
+│   │   └── theme_controller.dart
+│   └── utils
+│       └── ui.dart
+├── pubspec.lock
+├── pubspec.yaml
+```
+
+---
+
+## 🧑‍💻 Author
+
+Developed by **[@rakshitbhai](https://github.com/rakshitbhai)**
+
+Feel free to ⭐ the repo if you find it useful!
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License**.
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! To contribute:
+1. Fork the repository
+2. Create a new branch (`feature-name`)
+3. Commit changes and push the branch
+4. Open a Pull Request
+
+---
+
+### 📩 Need Help?
+If you have any issues or suggestions, feel free to open an issue or reach out! 😊
+
