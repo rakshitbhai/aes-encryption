@@ -1,7 +1,3 @@
-
-
-
-
 import 'dart:convert';
 import 'dart:typed_data';
 import 'dart:ui' as ui;
@@ -21,7 +17,6 @@ class EncryptionScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final EncryptionController controller = Get.put(EncryptionController());
     final ThemeController themeController = Get.find<ThemeController>();
-    // Global key for capturing the QR code widget.
     final GlobalKey qrKey = GlobalKey();
 
     Future<void> captureAndDownloadQRCode() async {
@@ -87,7 +82,6 @@ class EncryptionScreen extends StatelessWidget {
                     icon: Icons.refresh,
                     tooltip: 'Reset',
                     onPressed: () {
-                      // Call your reset functionality here.
                       controller.resetAll();
                     },
                   ),
@@ -117,21 +111,41 @@ class EncryptionScreen extends StatelessWidget {
               Obx(() => Text('Decrypted: ${controller.decryptedText.value}',
                   textAlign: TextAlign.center)),
               const SizedBox(height: 20),
-              Obx(() => Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Flexible(
-                        child: SelectableText(
-                          'Secret Key: ${controller.secretKeyDisplay.value}',
-                          textAlign: TextAlign.center,
-                        ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Flexible(
+                    child: TextField(
+                      controller: controller.secretKeyController,
+                      decoration: const InputDecoration(
+                        labelText: 'Secret Key',
+                        border: OutlineInputBorder(),
                       ),
-                      IconButton(
-                        icon: const Icon(Icons.copy),
-                        onPressed: controller.copySecretKey,
-                      )
-                    ],
-                  )),
+                    ),
+                  ),
+                  
+                ],
+              ),
+              const SizedBox(height: 10),
+              // Display IV (new)
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Flexible(
+                    child: TextField(
+                      controller: controller.ivController,
+                      decoration: const InputDecoration(
+                        labelText: 'IV:',
+                        border: OutlineInputBorder(),
+                      ),
+                      onSubmitted: controller.enteredIV,
+                    ),
+                  ),
+                  
+                ],
+              ),
+
+              const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -142,14 +156,12 @@ class EncryptionScreen extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 20),
-              // Toggle for QR Code background type.
               Obx(() => SwitchListTile(
                     title: const Text('Transparent QR Background'),
                     value: controller.qrTransparent.value,
                     onChanged: (value) => controller.toggleQRBackground(),
                   )),
               const SizedBox(height: 20),
-              // Display QR Code if encrypted text exists.
               Obx(() {
                 if (controller.encryptedText.value.isEmpty) {
                   return const Text(
